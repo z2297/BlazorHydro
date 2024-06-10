@@ -1,0 +1,25 @@
+﻿@page
+@using Hydro
+@using HydroDemo.Pages.Components
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@* <vc:counter/> *@
+@* <hydro name="Counter"/> *@
+<hydro name="Counter" params="@(new { CacheKey = "Cache1"})" />
+
+<hydro name="Counter" params="@(new { CacheKey = "Cache2"})" />
+
+<hydro name="Counter" params="@(new { CacheKey = "Cache3"})" />
+
+<hydro name="Counter" params="@(new { CacheKey = "Cache1"})" />
+<hydro name="Summary"/>
+@* @await Component.Hydro("Counter") *@
+@* @(await Component.Hydro<Counter>()) *@
